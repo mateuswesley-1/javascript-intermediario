@@ -1,4 +1,10 @@
 function Pencil(color, length){
+    //variaveis privadas: como não estamos usando o this
+    // essa variável não será visível numa instancia do objeto
+    var code = 153
+
+
+
     // nesse caso, significa que esquecemos de usar o
     // New, então fazemos a função retornar o objeto
     // invez de undefined
@@ -9,6 +15,25 @@ function Pencil(color, length){
     this.length = length;
     this.write = function(text){
         console.log(text)
+    }
+
+    // criando método para acessarmos variáveis
+    //privadas.
+
+    // dessa forma podemos import restrições para
+    // as alterações que podem ser feitas, coisa
+    // que não seria possível com propriedades normais
+    this.getCode = function(){
+        return code
+    }
+
+    this.changeCode = function(value){
+        if(Number.isInteger(value)){
+            code = value
+        }else{
+            code = Math.round(value)
+        }
+        
     }
 }
 
