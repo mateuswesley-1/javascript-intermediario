@@ -47,3 +47,9 @@ var meuLapis = new Pencil('red', 15)
 
 //Nesse caso this é uma variável do escopo global
 var meuLapis2 = Pencil('red', 15)
+
+// cria uma propriedade nova para todas as 
+//instâncias de Pencil, pois altera o prototype de Pencial, os métodos que qualquer instância herda da Classe
+Pencil.prototype.number = 5
+
+//meuLapis.number === meuLapis2.number --> 5
