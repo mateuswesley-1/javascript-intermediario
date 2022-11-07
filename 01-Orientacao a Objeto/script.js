@@ -53,3 +53,25 @@ var meuLapis2 = Pencil('red', 15)
 Pencil.prototype.number = 5
 
 //meuLapis.number === meuLapis2.number --> 5
+
+
+// Herança //
+
+function Polly(ponta = .5){
+    this.ponta = ponta
+    this.tamanho_ponta = 1
+    
+    this.usar_ponta = function(){
+        this.tamanho_ponta *= 0.9
+    }
+    this.trocar_ponta = function(){
+        this.tamanho_ponta = 1
+    }
+}
+
+// prototype é um objeto que possui todas as propriedades que Polly herda
+
+// quando fazemos essa igualdade, o prototype de Polly passa a ser Pencial
+Polly.prototype = new Pencil('red', 2)
+
+var Polly_1 = new Polly()
